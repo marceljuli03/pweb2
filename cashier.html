@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+  <link rel="stylesheet" href="cashier.css">
+ <title></title>
+ <style>
+
+
+  table{
+   background: lightblue;
+   margin:auto;
+
+  }
+
+
+ </style>
+</head>
+<body class="tengah">
+ <div>
+
+  <table border="1">
+   <h2 align="center" style="background: lightblue">Malatax Cashier</h2>
+   <tr>
+    <th>Products</th>
+    <th>Price</th>
+    <th>Quantity</th>
+   </tr>
+
+   <tr>
+    <th>Orak Arik</th>
+    <th><id="hargaorakarik" value="7000" onchange="total()">Rp. 7000</th>
+    <th><input type="number" id="q1"  value="0" onchange="total()"></th>
+   </tr>
+
+   <tr>
+    <th>Indomie Tante</th>
+    <th><id="hargaindomietante" value="6000" onchange="total()">Rp. 6000</th>
+    <th><input type="number" id="q2"  value="0" onchange="total()"></th>
+   </tr>
+
+   <tr>
+    <th>Intel</th>
+    <th><id="hargaintel" value="8000" onchange="total()">Rp. 8000</th>
+    <th><input type="number" id="q3"  value="0" onchange="total()"></th>
+   </tr>
+
+   <tr>
+    <th>Nasi Custom</th>
+    <th><id="harganasicustom" value="12000" onchange="total()">Rp. 12000</th>
+    <th><input type="number" id="q4"  value="0" onchange="total()"></th>
+   </tr>
+
+   <tr>
+    <th>Magelangan Dewa</th>
+    <th><id="hargamagelangandewa" value="12000" onchange="total()">Rp. 12000</th>
+    <th><input type="number" id="q5"  value="0" onchange="total()"></th>
+   </tr>
+
+   <tr>
+    <th>Es teh manis</th>
+    <th><id="hargaestehmanis" value="3000" onchange="total()">Rp. 3000</th>
+    <th><input type="number" id="q6"  value="0" onchange="total()"></th>
+   </tr>
+
+   <tr>
+     <th>Discount</th>
+     <th><input type="number" id="discount" value="0" onchange="total()"></th>
+
+   </tr>
+
+
+   <tr>
+    <th>Total</th>
+    <th><input type="text" style="background: yellow" id="total" disabled></th>
+   </tr>
+
+   <tr>
+    <th>Pembayaran</th>
+    <th><input type="number" id="bayar" onchange="total()"></th>
+   </tr>
+
+   <tr>
+    <th>Remainder</th>
+    <th><input type="text" style="background: yellow" id="total1" disabled></th>
+   </tr>
+  </table>
+        <marquee scrolldelay="100" direction="left" bgcolor="lightblue">Created by Malatax Team</marquee>
+<script>
+        function total() {
+         var hargaorakarik = document.getElementById('hargaorakarik').value;
+         var hargaindomietante = document.getElementById('hargaindomietante').value;
+         var hargaintel = document.getElementById('hargaintel').value;
+         var harganasicustom = document.getElementById('harganasicustom').value;
+         var hargamagelangandewa = document.getElementById('hargamagelangandewa').value;
+         var hargaestehmanis = document.getElementById('hargaestehmanis').value;
+         var q1 = document.getElementById('q1').value;
+         var q2 = document.getElementById('q2').value;
+         var q3 = document.getElementById('q3').value;
+         var q4 = document.getElementById('q4').value;
+         var q5 = document.getElementById('q5').value;
+         var q6 = document.getElementById('q6').value;
+         var discount = document.getElementById('discount').value;
+         var pembayaran =  parseInt(document.getElementById('bayar').value);
+         var jenis = document.getElementById("status").value;
+         var jumlah_harga = ((hargaorakarik*q1)+(hargaindomietante*q2)+(hargaintel*q3)+(harganasicustom*q4)+(hargamagelangandewa*q5)+(hargaestehmanis*q6))*(discount/100);
+          document.getElementById('total').value = jumlah_harga;
+
+         var kembali = pembayaran - jumlah_harga;
+          document.getElementById('total1').value = kembali;
+        }
+</script>
+ </div>
+</body>
+</html>
